@@ -1,0 +1,17 @@
+[
+ {
+   "repository": "SlimRoms/device_cyanogen_msm8916-common",
+   "target_path": "device/cyanogen/msm8916-common",
+   "branch": "lp5.1"
+ },
+ {
+   "repository": "SlimRoms/android_external_mm-dash",
+   "target_path": "external/mm-dash",
+   "branch": "lp5.1"
+ },
+ {
+   "repository": "SlimRoms/kernel_cyanogen_msm8916",
+   "target_path": "kernel/cyanogen/msm8916",
+   "branch": "lp5.1"
+ }
+]
