@@ -35,6 +35,7 @@
 #include <msg_q.h>
 #include <log_util.h>
 #include <loc_log.h>
+#include <string.h>
 
 namespace loc_core {
 
