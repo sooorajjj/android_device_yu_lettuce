@@ -1,4 +1,4 @@
-OMX_CORE_PATH := $(call my-dir)
+﻿OMX_CORE_PATH := $(call my-dir)
 
 # ------------------------------------------------------------------------------
 #                Make the shared library (libqomx_core)
