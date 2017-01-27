@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2014 The CyanogenMod Project
+# Copyright (C) 2016 The CyanogenMod Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,13 +14,13 @@
 # limitations under the License.
 #
 
-# Inherit from those products. Most specific first.
-$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+# Inherit from msm8916-common
+$(call inherit-product, device/qcom/msm8916-common/msm8916.mk)
 
-# Device identifier. This must come after all inclusions
-PRODUCT_DEVICE := lettuce
-PRODUCT_NAME := full_lettuce
-PRODUCT_BRAND := YU
-PRODUCT_MODEL := YU5010
-PRODUCT_MANUFACTURER := YU
+# Overlay
+DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
+
+# Include package config fragments
+include $(LOCAL_PATH)/product/*.mk
+
+$(call inherit-product-if-exists, vendor/yu/lettuce/lettuce-vendor.mk)

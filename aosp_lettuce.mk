@@ -14,13 +14,22 @@
 
 $(call inherit-product, device/yu/lettuce/full_lettuce.mk)
 
-# Inherit some common CM stuff.
-$(call inherit-product, vendor/cm/config/common_full_phone.mk)
+# Get the prebuilt list of APNs
+$(call inherit-product, vendor/omni/config/gsm.mk)
+
+# Inherit from those products. Most specific first.
+$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
+
+# Inherit from our custom product configuration
+$(call inherit-product, vendor/n-7.1.1_r1/config/common.mk)
+
+# Inherit AOSP device configuration
+$(call inherit-product, device/yu/lettuce/lettuce.mk)
 
 # Must define platform variant before including any common things
 TARGET_BOARD_PLATFORM_VARIANT := msm8916
 
-PRODUCT_NAME := cm_lettuce
+PRODUCT_NAME := aosp_lettuce
 BOARD_VENDOR := yu
 PRODUCT_DEVICE := lettuce
 

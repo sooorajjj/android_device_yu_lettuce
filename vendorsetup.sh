@@ -1,11 +1,12 @@
+ 
 #
-# Copyright (C) 2016 The CyanogenMod Project
+# Copyright (C) 2008 The Android Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
 #
-# http://www.apache.org/licenses/LICENSE-2.0
+#      http://www.apache.org/licenses/LICENSE-2.0
 #
 # Unless required by applicable law or agreed to in writing, software
 # distributed under the License is distributed on an "AS IS" BASIS,
@@ -14,13 +15,13 @@
 # limitations under the License.
 #
 
-# Inherit from msm8916-common
-$(call inherit-product, device/cyanogen/msm8916-common/msm8916.mk)
+# This file is executed by build/envsetup.sh, and can use anything
+# defined in envsetup.sh.
+#
+# In particular, you can add lunch options with the add_lunch_combo
+# function: add_lunch_combo generic-eng
 
-# Overlay
-DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
+add_lunch_combo aosp_lettuce-userdebug
+add_lunch_combo aosp_lettuce-eng
+add_lunch_combo aosp_lettuce-user
 
-# Include package config fragments
-include $(LOCAL_PATH)/product/*.mk
-
-$(call inherit-product-if-exists, vendor/yu/lettuce/lettuce-vendor.mk)
