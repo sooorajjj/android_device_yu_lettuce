@@ -19,3 +19,5 @@ include device/yu/lettuce/board/*.mk
 
 # inherit from proprietary files
 -include vendor/yu/lettuce/BoardConfigVendor.mk
+
+TARGET_SPECIFIC_HEADER_PATH += device/yu/lettuce/include

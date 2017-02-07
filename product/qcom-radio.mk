@@ -15,3 +15,11 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/data/qmi_config.xml:system/etc/data/qmi_config.xml \
     $(LOCAL_PATH)/configs/data/dsi_config.xml:system/etc/data/dsi_config.xml
 endif
+#IMS SETTINGS
+IMS_SETTINGS := imssettings
+
+#IMS Extension module for Android Telephony
+IMS_EXT := ims-ext-common
+
+PRODUCT_PACKAGES += $(IMS_SETTINGS)
+PRODUCT_PACKAGES += $(IMS_EXT)

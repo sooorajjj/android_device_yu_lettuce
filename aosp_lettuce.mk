@@ -12,10 +12,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-$(call inherit-product, device/yu/lettuce/full_lettuce.mk)
+# $(call inherit-product, device/yu/lettuce/full_lettuce.mk)
 
 # Get the prebuilt list of APNs
-$(call inherit-product, vendor/omni/config/gsm.mk)
+$(call inherit-product, vendor/n-7.1.1_r1/config/gsm.mk)
 
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
@@ -30,18 +30,22 @@ $(call inherit-product, device/yu/lettuce/lettuce.mk)
 TARGET_BOARD_PLATFORM_VARIANT := msm8916
 
 PRODUCT_NAME := aosp_lettuce
-BOARD_VENDOR := yu
 PRODUCT_DEVICE := lettuce
+# BOARD_VENDOR := yu
+PRODUCT_BRAND := YU
+PRODUCT_MODEL := YU5010
+PRODUCT_MANUFACTURER := YU
 
 PRODUCT_GMS_CLIENTID_BASE := android-micromax
 
-TARGET_VENDOR_PRODUCT_NAME := YUPHORIA
-TARGET_VENDOR_DEVICE_NAME := YUPHORIA
-PRODUCT_BUILD_PROP_OVERRIDES += TARGET_DEVICE=YUPHORIA PRODUCT_NAME=YUPHORIA
+# TARGET_VENDOR_PRODUCT_NAME := YUPHORIA
+# TARGET_VENDOR_DEVICE_NAME := YUPHORIA
+# PRODUCT_BUILD_PROP_OVERRIDES += TARGET_DEVICE=YUPHORIA PRODUCT_NAME=YUPHORIA
 
 ## Use the latest approved GMS identifiers unless running a signed build
-ifneq ($(SIGN_BUILD),true)
+# ifneq ($(SIGN_BUILD),true)
 PRODUCT_BUILD_PROP_OVERRIDES += \
+	PRODUCT_NAME=lettuce \
     BUILD_FINGERPRINT=YU/YUPHORIA/YUPHORIA:5.1.1/LMY49J/YOG4PAS8A8:user/release-keys \
     PRIVATE_BUILD_DESC="YUPHORIA-user 5.1.1 LMY49J YOG4PAS8A8 release-keys"
-endif
+# endif
